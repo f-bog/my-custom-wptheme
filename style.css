@@ -1,0 +1,391 @@
+/*
+Theme Name: My Custom Theme
+Theme URI: https://frederickswebdesigns.com.au/
+Author: Frederick Bogdanoff
+Author URI: https://frederickswebdesigns.com.au/
+Description: My custom theme, built from scratch.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: FredsCustomTheme
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  /* overflow-x: hidden; */
+}
+
+h1 {
+  font-size: 45px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 25px;
+}
+/* Hero content styles */
+
+.hero {
+  width: 100%;
+  margin-top: 50px;
+  background-color: rgb(255, 238, 0);
+  height: 400px;
+}
+.hero-content {
+  top: 45%;
+  position: relative;
+  text-align: center;
+  z-index: 900;
+}
+
+/* header & footer styles */
+header {
+  top: 0;
+  max-height: 50px;
+  z-index: 1000;
+  align-items: center;
+  margin: 0;
+}
+footer {
+  bottom: 0;
+  align-items: baseline;
+  height: 50px;
+}
+
+header,
+footer {
+  display: flex;
+
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.733);
+}
+footer p {
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.header-text {
+  margin: 10px 0px 10px 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 25px;
+  transition: 0.1s ease-in-out;
+}
+
+/* Navigation Styles */
+
+.hamburger-menu {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px 15px 10px 0px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  border-radius: 10%;
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+nav {
+  position: fixed;
+  display: none;
+  top: 50px;
+  margin: 0;
+  z-index: 100000;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgba(255, 255, 255, 0.733);
+  text-align: center;
+}
+nav ul li {
+  position: relative;
+  top: 175px;
+  margin: 30px;
+  color: black;
+  display: block;
+  font-size: 40px;
+}
+
+/* link styles */
+header a,
+.post-listing a,
+.widget-area a {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+header a:hover,
+.post-listing a:hover,
+.widget-area a:hover {
+  color: #333;
+}
+header a:before,
+.post-listing a:before,
+.widget-area a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+header a:hover:before,
+.post-listing a:hover:before,
+.widget-area a:hover:before,
+.readmore a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* Main Content Area */
+.the-content {
+  max-width: 769px;
+  margin: 25px auto;
+  padding: 25px;
+}
+.blog .the-content {
+  max-width: 90%;
+}
+.blog-content {
+  padding-bottom: 80px;
+  width: 60%;
+  float: left;
+}
+#blog-sidebar {
+  float: right;
+  margin-right: 20px;
+  width: 20%;
+  word-wrap: break-word;
+}
+/* Widget Styles */
+
+/* home widget 1 */
+#primary-sidebar {
+  padding: 50px 0px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  background-color: rgb(69, 85, 155);
+}
+
+#primary-sidebar a {
+  font-weight: 900;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 1px;
+}
+#primary-sidebar a:before {
+  background-color: white;
+}
+
+/* home widget 2 */
+
+#primary-sidebar2 {
+  padding: 50px 0px;
+  text-align: center;
+  width: 100%;
+}
+
+#primary-sidebar2 a {
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* about widget */
+#about-sidebar {
+  padding: 50px 0px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  background-color: rgb(89, 155, 69);
+}
+
+#about-sidebar a {
+  font-weight: 900;
+  font-size: 18px;
+  color: white;
+  letter-spacing: 1px;
+}
+#about-sidebar a:before {
+  background-color: white;
+}
+/* blog page and post listing styles */
+.post-info {
+  position: relative;
+  left: -7px;
+  font-size: 14px !important;
+}
+.post-listing {
+  padding: 10px;
+  margin: 15px;
+  border-bottom: solid 1px lightgray;
+}
+.post-listing p {
+  font-size: 16px;
+}
+.post-listing h3 {
+  margin: 0px auto 5px auto;
+}
+
+/* =====================WordPress Core
+------------------------------------------------------------------------------------------------------------- */
+/* =====================WordPress Core
+------------------------------------------------------------------------------------------------------------- */
+/* =====================WordPress Core
+------------------------------------------------------------------------------------------------------------- */
+/* =====================WordPress Core
+------------------------------------------------------------------------------------------------------------- */
+/* =====================WordPress Core
+------------------------------------------------------------------------------------------------------------- */
+
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto;
+}
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%; /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
